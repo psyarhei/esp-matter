@@ -1,0 +1,24 @@
+name: Push components to Espressif Component Service
+
+on:
+  push:
+    branches:
+      - main
+      - release/*
+
+jobs:
+  upload_components:
+    # Disable the job in forks
+    if: ${{ github.repository_owner == 'psyarhei' }}
+
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: 'recursive'
+      - name: Upload components to component service
+        uses: espressif/upload-components-ci-action@v1
+        with:
+          name: "esp_matter"
+          namespace: "psyarhei"
+          api_token: ${{ secrets.IDF_COMPONENT_API_TOKEN }}
