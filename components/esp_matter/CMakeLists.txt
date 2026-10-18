@@ -88,7 +88,7 @@ else()
                                   "esp_matter_ota.cpp")
 endif(CONFIG_ESP_MATTER_ENABLE_MATTER_SERVER)
 
-set(REQUIRES_LIST   chip bt nvs_flash app_update esp_secure_cert_mgr mbedtls esp_system openthread espressif__cjson)
+set(REQUIRES_LIST   chip bt nvs_flash app_update esp_secure_cert_mgr mbedtls esp_system openthread cjson)
 
 idf_component_register( SRC_DIRS        ${SRC_DIRS_LIST}
                         INCLUDE_DIRS    ${INCLUDE_DIRS_LIST}

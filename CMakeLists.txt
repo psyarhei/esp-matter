@@ -5,7 +5,7 @@ get_filename_component(CHIP_ROOT ${CMAKE_CURRENT_LIST_DIR}/connectedhomeip/conne
 set(ESP_COMPONENTS_PATH ${CMAKE_CURRENT_SOURCE_DIR}/components)
 
 set(REQUIRE_COMPONENTS esp_eth freertos lwip bt mbedtls fatfs app_update console openthread nvs_flash spi_flash mdns
-    esp_secure_cert_mgr esp_system esp_timer spiffs esp_http_client esp_netif vfs espressif__cjson)
+    esp_secure_cert_mgr esp_system esp_timer spiffs esp_http_client esp_netif vfs cjson)
 
 function(collect_exclude_files PATH INCLUDE_FILES EXCLUDE_LIST)
     file(GLOB ALL_FILES ${PATH}/*.cpp ${PATH}/*.c)
